@@ -66,12 +66,10 @@
             {{- end }}
           </div>
         </div>
-        {{- else if .button }}
-        <a href="{{ .url }}" class="navbar-item">
-          <span class="button signup-button rounded secondary-btn raised">
-            {{ .title }}
-          </span>
-        </a>
+        {{- else if .img }}
+          <a href="{{ .url }}" class="navbar-item">
+            <img src="{{ printf "/images/logos/%s.png" .title | relURL }}" alt="" width="30" height="30">
+          </a>
         {{- else }}
         <a href="{{ .url }}" class="navbar-item is-secondary">
           {{ .title }}

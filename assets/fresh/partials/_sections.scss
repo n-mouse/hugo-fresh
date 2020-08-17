@@ -27,6 +27,8 @@ Section Styles
     }
 }
 
+.section.is-medium { padding: 4rem 1.5rem !important;  }
+
 //Titles
 .title-wrapper {
     max-width: 500px;
@@ -77,9 +79,11 @@ img.pushed-image {
             font-weight: 600;
         }
         .icon-box-text {
-            color: $title-grey;
-            font-size: 1rem;
+            color: #666; 
+            font-size: 1.1rem;
             font-weight: 400;
         }
     }
 }
+
+.pictures { display: flex; flex-wrap: wrap }

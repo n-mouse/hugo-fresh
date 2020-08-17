@@ -17,6 +17,8 @@ $(document).ready(function(){
             $('.navbar.is-light').toggleClass('is-dark-mobile')
         });
     }
+    
+    var lightbox = GLightbox({touchNavigation: true});
 
     //Animate left hamburger icon and open sidebar
     $('.menu-icon-trigger').click(function(e){

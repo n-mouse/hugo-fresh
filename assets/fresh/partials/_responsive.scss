@@ -39,6 +39,13 @@ Responsive Styles
     .testimonial {
         margin: 0 auto;
     }
+    
+    .title.is-1 { font-size: 2.3rem !important}
+    
+    .pictures .column.is-3 {
+        width: 50%;
+        flex-basis: unset;
+    } 
 }
 
 

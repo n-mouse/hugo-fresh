@@ -1,28 +1,39 @@
-{{- $section3   := .Site.Params.section3 }}
-{{- $title      := index $section3 "title" }}
-{{- $subtitle   := index $section3 "subtitle" }}
+{{- $section3 := .Site.Params.section3 }}
+{{- $title    := index $section3 "title" }}
+{{- $subtitle := index $section3 "subtitle" }}
+{{- $features := index $section3 "features" }}
 {{- $image      := index $section3 "image" }}
-{{- $buttonText := index $section3 "buttontext" }}
-{{- $buttonLink := index $section3 "buttonlink" }}
-<section class="section section-feature-grey is-medium">
+<section class="section is-medium" id="spec">
   <div class="container">
     <div class="columns">
-      <div class="column is-10 is-offset-1">
+      <div class="column is-centered-tablet-portrait">
+        <h1 class="title section-title">{{ $title }}</h1>
+        <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
+        <div class="divider"></div>
         <div class="has-text-centered">
-          <img class="pushed-image" src="{{ printf "/images/%s" $image | relURL }}">
+          <img style="margin-top: 5rem" src="{{ printf "/images/%s" $image | relURL }}">
         </div>
       </div>
-    </div>
+      <div class="column is-7 mt-60">
+        {{- range $features }}
+        <article class="media icon-box">
+          <figure class="media-left">
+            <p class="image">
+              <img style="width: 26px;" src="/images/checkmark.svg">
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <span class="icon-box-title">{{ .title }}</span>
 
-    <div class="title-wrapper has-text-centered">
-      <h2 class="title is-2">{{ $title }}</h2>
-      <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
+                <span class="icon-box-text">{{ .text | markdownify }}</span>
+              </p>
+            </div>
+          </div>
+        </article>
+        {{- end }}
+      </div>
     </div>
-
-    <p class="has-text-centered mt-20">
-      <a class="button cta is-large rounded secondary-btn raised" href="{{ $buttonLink }}">
-        {{ $buttonText }}
-      </a>
-    </p>
   </div>
 </section>

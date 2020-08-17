@@ -1,27 +1,56 @@
 <section class="section section-light-grey is-medium">
   <div class="container">
     <div class="title-wrapper has-text-centered">
-      <h2 class="title is-2 is-spaced">Drop us a line or two </h2>
-      <h3 class="subtitle is-5 is-muted">We'd love to hear from you</h3>
+      <h2 class="title is-2 is-spaced">Замовити</h2>
+      <h3 class="subtitle is-5 is-muted">Ціна - <strong>3000 грн</strong></h3>
       <div class="divider is-centered"></div>
     </div>
 
     <div class="content-wrapper">
       <div class="columns">
         <div class="column is-6 is-offset-3">
-          <form>
+          <form action="https://formspree.io/xnqgyalv" method="POST" class="order-form">
             <div class="columns is-multiline">
               <div class="column is-6">
-                <input class="input is-medium" type="text" placeholder="Enter your name">
+                <label for="first">Ім'я *</label>
+                <input required oninvalid="this.setCustomValidity('Заповніть це поле')" name="first" class="input is-medium" type="text">
               </div>
               <div class="column is-6">
-                <input class="input is-medium" type="email" placeholder="Enter your email address">
+                <label for="second">Прізвище</label>
+                <input name="last" class="input is-medium" type="text">
+              </div>
+              <div class="column is-6">
+                <label for="email">Електронна адреса *</label>
+                <input required oninvalid="this.setCustomValidity('Заповніть це поле')" name="email" class="input is-medium" type="email">
+              </div>
+              <div class="column is-6">
+                <label for="phone">Номер телефону *</label>
+                <input required oninvalid="this.setCustomValidity('Заповніть це поле')" name="phone" class="input is-medium" type="phone">
               </div>
               <div class="column is-12">
-                <textarea class="textarea" rows="10" placeholder="Write someting..."></textarea>
+                <label for="comment">Коментар</label>
+                <textarea name="comment" class="textarea" rows="5"></textarea>
+              </div>
+              <div class="column is-6">
+                <label for="color">Оберіть колір *</label>
+                <select required oninvalid="this.setCustomValidity('Заповніть це поле')" class="select-css" name="color">
+                  <option disabled selected value></option>
+                  <option>Червоний</option>
+                  <option>Синій</option>
+                  <option>Чорний</option>
+                  <option>Металік</option>
+                </select>
+              </div>
+             <div class="column is-6">
+               <label for="light">Оберіть світло *</label>
+                <select required oninvalid="this.setCustomValidity('Заповніть це поле')" class="select-css" name="light">
+                  <option disabled selected value></option>
+                  <option>Нейтральне</option>
+                  <option>Тепле</option>
+                </select>
               </div>
               <div class="form-footer has-text-centered mt-10">
-                <button class="button cta is-large primary-btn raised is-clear">Send Message</button>
+                <button class="button cta is-large primary-btn raised is-clear">Відправити</button>
               </div>
             </div>
           </form>
